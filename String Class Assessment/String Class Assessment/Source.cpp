@@ -34,7 +34,7 @@ bool FunString::Compared() //compares two strings
 
 void FunString::Append()
 {
-	// currently unoperational
+	// currently non operational
 	// will later add a second string after the first string and become one string together
 }
 
@@ -44,7 +44,7 @@ void FunString::Prepend()
 	for (i = 0; i < Strlen; i++)
 		m_String2[i] = m_String[i];
 
-	// currently unoperational
+	// currently non operational
 	// will later add a second string before the first string and become one string together
 }
 
@@ -55,7 +55,8 @@ void FunString::c_Style()
 }
 
 void FunString::lowerCase()
-{
+{	
+
 	//No understanding yet
 }
 

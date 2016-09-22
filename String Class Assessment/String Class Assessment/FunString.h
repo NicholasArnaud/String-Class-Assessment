@@ -5,7 +5,7 @@ class FunString
 {
 	 char *m_String; //string one
 	 char *m_String2; //string two
-	 int Strlen; //first strings length
+	 int Strlen; //first string's length
 
 public:
 	FunString() {}; //basic tool to call functions
@@ -20,7 +20,7 @@ public:
 	void lowerCase(); //Will change string characters into lowercase characters
 	void subStrLoc(); //Will find a SubString within the first string
 	void strInStr(); //Will find the substring within the class after a certain index
-	void strRepStr(); //Will 
-	void c_inStyle();	//Will set string to input C-style string
+	void strRepStr(); //Will replace a substring with another substring
+	void c_inStyle(); //Will set string to input C-style string
 	
 };
