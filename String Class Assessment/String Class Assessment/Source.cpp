@@ -1,36 +1,36 @@
 #include <iostream>
 #include "FunString.h"
 
-int FunString::Total()
+int FunString::Length()
 {
-int i = 0;
-for (;  m_String[i] != 0; i++);// loop runs until "i" reaches the null character of the string m_String
-std::cout << "Number of characters in the string is: "<< i << "\n"; // displays the number of characters in the string m_String
-Strlen = i; //saves the length of the length of first string
-return Strlen; //returns number of characters in string
+	int i = 0;
+	for (; m_String[i] != 0; i++);// loop runs until "i" reaches the null character of the string m_String
+	std::cout << "Number of characters in the string is: " << i << "\n"; // displays the number of characters in the string m_String
+	Strlen = i; //saves the length of the length of first string
+	return Strlen; //returns number of characters in string
 }
 
 int FunString::indexedChar()
 {
 	int j = 0; // places a spot in the string index for one character
-	std::cout <<"First character in the string is: " << m_String[j] << "\n"; //Displays first character in String
+	std::cout << "First character in the string is: " << m_String[j] << "\n"; //Displays first character in String
 	return 2;
 }
 
 bool FunString::Compared() //compares two strings
 {
-	std::cout << "First string is : " << m_String << "\n" << "The second string is : " << m_String2<< "\n"; // displays current valid 2 strings that will be used
+	std::cout << "First string is : " << m_String << "\n" << "The second string is : " << m_String2 << "\n"; // displays current valid 2 strings that will be used
 	if (m_String == m_String2)	// if statement used to find a difference between 2 inputed strings
 	{
 		std::cout << "The two strings are very much alike \n"; // displays that the 2 strings are in fact similar
-	return true; // bool function becomes true and breaks from function
+		return true; // bool function becomes true and breaks from function
 	}
 	else  // else segment runs if comparison between the 2 strings are different in any way
 	{
 		std::cout << "The two strings are not similar at all \n"; // displays that the 2 strings are not similar to each other
 		return false;	// bool function becomes false and function ends
 	}
-}  
+}
 
 void FunString::Append()
 {
@@ -51,25 +51,52 @@ void FunString::Prepend()
 void FunString::c_Style()
 {
 	const char* constString = m_String;	// creates a const character pointer towards the original string
-	std::cout << "const char*: " << constString<< "\n";	// displays the new const character string 
+	std::cout << "const char*: " << constString << "\n";	// displays the new const character string 
 }
 
 void FunString::lowerCase()
-{	
+{
 
-	//No understanding yet
+	for (int j = 0; m_String[j]; j++)
+	{
+		if (m_String[j] >= 65 && m_String[j] <= 90)
+		{
+
+			m_String[j] = (int)m_String[j] + 32;
+
+		}
+		else if (m_String[j] <= 65 && m_String[j] >= 122)
+		{
+			m_String[j];
+		}
+	}
+	std::cout << "In only lowercase characters: " << m_String << "\n";
 }
 
 void FunString::upperCase()
 {
-	//No understanding yet
+	// still needs work
+	for (int j = 0; m_String[j]; j++)
+	{
+		if (m_String[j] >= 65 && m_String[j] <= 90)
+		{
+
+			m_String[j] = (int)m_String[j] - 32;
+
+		}
+		else if (m_String[j] <= 65 && m_String[j] >= 122)
+		{
+			m_String[j];
+		}
+	}
+	std::cout << "In only lowercase characters: " << m_String << "\n";
 }
 
 void FunString::subStrLoc()
 {
 	int i, j, temp;	//used to get index given string and arrays
 	char substr[20] = { "ow" }; //sets the substring
-	std::cout << "Looking for the substring : " << substr<< "\n"; //shows what the substring is to the user
+	std::cout << "Looking for the substring : " << substr << "\n"; //shows what the substring is to the user
 	for (i = 0; m_String[i] != '\0'; i++) //for loop to search string for the substring
 	{
 		j = 0; //used to index the substring
@@ -79,12 +106,12 @@ void FunString::subStrLoc()
 			while (m_String[i] == substr[j]) //continues as long as both strings don't equal to the null character
 			{
 				i++;
-				j++;	
+				j++;
 			}
 
 			if (substr[j] == '\0') //if the substring is found in the string
 			{
-				std:: cout << "The substring is present in given string at position " << temp << "\n"; //displays location of substring found
+				std::cout << "The substring is present in given string at position " << temp << "\n"; //displays location of substring found
 			}
 			else //if the substring is not found
 			{
@@ -95,7 +122,7 @@ void FunString::subStrLoc()
 	}
 
 	if (temp == 0) //breaks the loop 
-		std:: cout << "The substring is not present in given string";
+		std::cout << "The substring is not present in given string";
 }
 
 void FunString::strInStr()
@@ -103,7 +130,7 @@ void FunString::strInStr()
 	//No understanding yet
 }
 
-void FunString:: strRepStr()
+void FunString::strRepStr()
 {
 	//No understanding yet
 }
