@@ -18,7 +18,7 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainforString.cpp">
+    <ClCompile Include="FunString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
