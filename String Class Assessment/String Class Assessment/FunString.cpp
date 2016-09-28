@@ -7,12 +7,12 @@ FunString::FunString()
 
 FunString::FunString(char string[])
 {
-
-	for (int i = 0; string[i] != '\0'; i++)
+	int i;
+	for (i = 0; string[i] != '\0'; i++)
 	{
 		m_String[i] = string[i];
-
 	}
+	m_String[i] = '\0';
 }
 
 int FunString::Length()
@@ -26,8 +26,8 @@ int FunString::Length()
 
 char FunString::indexedChar(int j)
 {
-char indChar = m_String[j];
-return indChar;
+	char indChar = m_String[j];
+	return indChar;
 }
 
 //bool FunString::Compared(FunString other) //compares two strings
@@ -37,58 +37,65 @@ return indChar;
 //}
 bool FunString::Compared(FunString as) //compares two strings
 {
-	std::cout << "First string is : " << m_String << "\n" << "The second string is : " << as.m_String << "\n"; // displays current valid 2 strings that will be used
+
 	if (m_String == as.m_String)	// if statement used to find a difference between 2 inputed strings
 	{
-		std::cout << "The two strings are very much alike \n"; // displays that the 2 strings are in fact similar
 		return true; // bool function becomes true and breaks from function
 	}
 	else  // else segment runs if comparison between the 2 strings are different in any way
 	{
-		std::cout << "The two strings are not similar at all \n"; // displays that the 2 strings are not similar to each other
 		return false;	// bool function becomes false and function ends
 	}
 }
 
-void FunString::Append()
+char* FunString::Append(FunString as)
 {
-	// currently non operational
-	// will later add a second string after the first string and become one string together
-}
-
-void FunString::Prepend(FunString as)
-{
+	as.Length();
+	int m_Length = Strlen;
 	int i;
-	for (i = 0; i < Strlen; i++)
-		as.m_String[i] = m_String[i];
-
-	// currently non operational
-	// will later add a second string before the first string and become one string together
+	for (i = 0; i < as.Strlen; i++)
+	{
+		m_String[m_Length + i] = as.m_String[i];
+	}
+	m_String[m_Length + i] = '\0';
+	return m_String;
 }
 
-void FunString::c_Style()
+char* FunString::Prepend(FunString as)
+{
+	as.Length();
+	int m_Length = as.Strlen;
+	int i;
+	for (i = 0; i < Strlen; i++);
+	{
+		as.m_String[m_Length + i] = m_String[i];
+	}
+	as.m_String[m_Length + i] = '\0';
+	return as.m_String;
+	// currently non operational
+	// will later correctly add a second string before the first string and become one string together
+}
+
+const char* FunString::c_Style()
 {
 	const char* constString = m_String;	// creates a const character pointer towards the original string
-	std::cout << "const char*: " << constString << "\n";	// displays the new const character string 
+	return constString; // returns the now c-styled string
 }
 
 void FunString::lowerCase()
 {
 
-	for (int j = 0; m_String[j]; j++)
+	for (int j = 0; m_String[j]; j++) //loops through all the characters in the string
 	{
-		if (m_String[j] >= 65 && m_String[j] <= 90)
+		if (m_String[j] >= 65 && m_String[j] <= 90) // checks for any upper case characters
 		{
-			char c = m_String[j];
-			c += 32;
-			m_String[j] = c;
-
-			//m_String[j] = (int)m_String[j] + 32;	//breaks
-
+			char c = m_String[j]; // sets new character and defines it as the uppercase character needed to be changed
+			c += 32;	// adds 32 to change the value of character to its lower case equilivent in the ASCII table
+			m_String[j] = c; // sets the new lower case character into where the uppercase character was in the string
 		}
-		else if ((int)m_String[j] >= 65 && (int)m_String[j] <= 122)
+		else if ((int)m_String[j] >= 65 && (int)m_String[j] <= 122) // if the character is already lowercase it goes here
 		{
-
+			// the character is left alone and loops over looking at the next character
 			//m_String[j];
 		}
 	}
@@ -96,21 +103,21 @@ void FunString::lowerCase()
 
 void FunString::upperCase()
 {
-	// still needs work
-	for (int j = 0; m_String[j]; j++)
+	
+	for (int j = 0; m_String[j]; j++) // loops through all the characters in the string
 	{
-		if (m_String[j] >= 65 && m_String[j] <= 90)
+		if (m_String[j] >= 61 && m_String[j] <= 122) // checks for any lowercase characters
 		{
 
-			m_String[j] = (int)m_String[j] - 32;
+			m_String[j] = (int)m_String[j] - 32; // subtracts 32 to change the value of character to its upper case equilivent in the ASCII table
 
 		}
-		else if (m_String[j] <= 65 && m_String[j] >= 122)
+		else if (m_String[j] >= 65 && m_String[j] <= 90) //if the character is already uppercase it goes here
 		{
+			// the character is left alone anf loops over looking at the next character
 			m_String[j];
 		}
 	}
-	std::cout << "In only lowercase characters: " << m_String << "\n";
 }
 
 void FunString::subStrLoc()
@@ -160,3 +167,6 @@ void FunString::c_inStyle()
 {
 	//No understanding yet
 }
+
+
+
