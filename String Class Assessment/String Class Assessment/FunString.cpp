@@ -88,10 +88,10 @@ void FunString::lowerCase()
 			c += 32;	// adds 32 to change the value of character to its lowercase equivalent in the ASCII table
 			m_String[j] = c; // sets the new lower case character into where the uppercase character was in the string
 		}
-		else if ((int)m_String[j] >= 65 && (int)m_String[j] <= 122) // if the character is already lowercase it goes here
+		else if ((int)m_String[j] >= 97 && (int)m_String[j] <= 122) // if the character is already lowercase it goes here
 		{
 			// the character is left alone and loops over looking at the next character
-			//m_String[j];
+			m_String[j];
 		}
 	}
 }
@@ -101,7 +101,7 @@ void FunString::upperCase()
 
 	for (int j = 0; m_String[j]; j++) // loops through all the characters in the string
 	{
-		if (m_String[j] >= 61 && m_String[j] <= 122) // checks for any lowercase characters
+		if (m_String[j] >= 97 && m_String[j] <= 122) // checks for any lowercase characters
 		{
 
 			m_String[j] = (int)m_String[j] - 32; // subtracts 32 to change the value of character to its uppercase equivalent in the ASCII table
@@ -118,7 +118,7 @@ void FunString::upperCase()
 int FunString::subStrLoc()
 {
 	int i, j, temp;	//used to get index given string and arrays
-	char substr[20] = { "ow" }; //sets the substring
+	char substr[20] = { "state" }; //sets the substring
 	std::cout << "Looking for the substring : " << substr << "\n"; //shows what the substring is to the user
 	for (i = 0; m_String[i] != '\0'; i++) //for loop to search string for the substring
 	{
@@ -148,9 +148,33 @@ int FunString::subStrLoc()
 		return temp;
 }
 
-void FunString::strInStr()
+int FunString::stratString(int k)
 {
-	//No understanding yet
+	int w, nope; //used to index trough given string and arrays
+	char subs[20] = { "ent" }; // creates the substring
+	for (; m_String[k] != '\0'; k++) //for loop to search the string to find the substring
+	{
+		w = 0; // defined to index substring
+		if (m_String[k] == subs[w]) // runs if the string has the substring
+		{
+			nope = w + 1; //saves the index value where the substring was found
+			while (m_String[k] == subs[w])//continues as long as both strings don't equal to the null character
+			{
+				k++;
+				w++;
+			}
+			if (subs[w] == '\0') //once the substring reaches the null character
+			{
+				return nope; // breaks loop and substring was found before the end of main string
+			}
+			else
+			{
+				w = nope; // saves the end location of the substring
+				nope = 0; // the function returns false and substring is not found
+			}
+		}
+	}
+	return nope;
 }
 
 void FunString::strRepStr()
@@ -159,7 +183,17 @@ void FunString::strRepStr()
 	// is a bonus
 }
 
-void FunString::c_inStyle()
+char* FunString::c_enterStyle()
 {
-	//No understanding yet
+	char string[255]; // sets string in c-style
+	std::cin >> string; //user changes the preset string
+	std::cout << "\n \n"; // adding some space between lines
+	int i;
+	for (i = 0; string[i] != '\0'; i++) // for loop reads all the characters in the given string arguements
+	{
+		m_String[i] = string[i]; // sets all the characters into the string class
+	}
+	m_String[i] = '\0'; // adds the null character to the end of the string to prevent errors
+	
+	return m_String;
 }
