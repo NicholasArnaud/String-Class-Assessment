@@ -10,7 +10,7 @@ public:
 	FunString(char String[]);
 	int Length(); //Will find the length of the string completely until reaches null
 	char indexedChar(int j);//Will pick a character in a string
-	bool Compared(FunString as); //Will compare 2 strings together 0
+	bool Compared(FunString as); //Will compare 2 strings together 
 	char* Append(FunString as); //Will add the second string after the first string
 	char* Prepend(FunString as); //Will add the second string before the first string
 	const char* c_Style(); // Will write the string c-styled	

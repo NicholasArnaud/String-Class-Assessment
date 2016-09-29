@@ -49,7 +49,7 @@ int main()
 
 		std::cout << "With '0' being false and '1' being found, the substring is:  \n" << fs.stratString(4) << "\n \n"; // tells whether or not the substring in function "stratString" starting from a certain point in the string
 
-		i++; // incriments the for loop to '2' for the if statement to work
+		i++; // increments the for loop to '2' for the if statement to work
 
 
 		if (i != 2) // if loop will make sure the program only asks for user input once while the loop only runs twice
@@ -58,7 +58,7 @@ int main()
 			fs.c_enterStyle(); //runs function that has the user input his very own string
 
 			std::cout << "Now please enter second string: \n"; // asks user 
-			as.c_enterStyle(); //runs function that has the user input yet another string
+			as.c_enterStyle(); //runs function that has the user input yet an`other string
 		}
 	}
 	system("pause");
