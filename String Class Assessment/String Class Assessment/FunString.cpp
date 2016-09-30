@@ -119,7 +119,6 @@ int FunString::subStrLoc()
 {
 	int i, j, temp;	//used to get index given string and arrays
 	char substr[20] = { "state" }; //sets the substring
-	std::cout << "Looking for the substring : " << substr << "\n"; //shows what the substring is to the user
 	for (i = 0; m_String[i] != '\0'; i++) //for loop to search string for the substring
 	{
 		j = 0; //used to index the substring
@@ -148,13 +147,15 @@ int FunString::subStrLoc()
 		return temp;
 }
 
-int FunString::stratString(int k)
+int FunString::stringatString(int k)
 {
+	Length();
 	int w, nope; //used to index trough given string and arrays
-	char subs[20] = { "ent" }; // creates the substring
-	for (; m_String[k] != '\0'; k++) //for loop to search the string to find the substring
+	char subs[20] = { "ST" }; // creates the substring
+	for (k; m_String[k] !=Strlen; k++) //for loop to search the string to find the substring
 	{
 		w = 0; // defined to index substring
+		nope = w; // sets nope to equal '0' to return false
 		if (m_String[k] == subs[w]) // runs if the string has the substring
 		{
 			nope = w + 1; //saves the index value where the substring was found

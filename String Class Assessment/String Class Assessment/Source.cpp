@@ -18,8 +18,8 @@ int main()
 	//	fs.c_enterStyle(); //Is part 12 of Assessment
 
 
-	FunString fs = FunString("TestStatement1"); // tested first string
-	FunString as = FunString("TestStatement2"); // tested second string
+	FunString fs = FunString("Test1"); // tested first string
+	FunString as = FunString("Test2"); // tested second string
 
 
 	for (int i = 0; i < 2; ) //for loop will run the preset strings first and on second run will use the users' inputted strings
@@ -47,7 +47,7 @@ int main()
 
 		std::cout << "With '0' being false and '1' being found, the substring is: " << fs.subStrLoc() << "\n \n"; // tells whether or not the substring in function "subStrLoc" at any point in the string
 
-		std::cout << "With '0' being false and '1' being found, the substring is:  \n" << fs.stratString(4) << "\n \n"; // tells whether or not the substring in function "stratString" starting from a certain point in the string
+		std::cout << "With '0' being false and '1' being found, the substring is:  \n" << fs.stringatString(2) << "\n \n"; // tells whether or not the substring in function "stratString" starting from a certain point in the string
 
 		i++; // increments the for loop to '2' for the if statement to work
 

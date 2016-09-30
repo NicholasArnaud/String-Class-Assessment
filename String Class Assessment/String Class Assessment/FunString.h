@@ -17,7 +17,7 @@ public:
 	void upperCase(); //Will change string characters into uppercase characters
 	void lowerCase(); //Will change string characters into lowercase characters
 	int subStrLoc(); //Will find a SubString within the first string
-	int stratString(int k); //Will find the substring within the class after a certain index
+	int stringatString(int k); //Will find the substring within the class after a certain index
 	void strRepStr(); //Will replace a substring with another substring
 	char* c_enterStyle(); //Will set string to input C-style string
 
